@@ -1,0 +1,14 @@
+{
+  "name": "vivendo-o-processo",
+  "version": "1.0.0",
+  "description": "Um blog sobre o Philadelphia 76ers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Thimóteo",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

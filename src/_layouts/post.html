@@ -1,0 +1,40 @@
+---
+layout: default-post
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</article>
+
+<ul class="listing comments">
+  {% for comment in site.data.comments.sessions %}
+    {% if comment.path == page.url %}
+    <li>
+      <img src="{{ comment.avatar }}" alt="{{ comment.name }}">
+      <time datetime="{{ comment.created | date_to_xmlschema }}">{{ comment.created | date_to_long_string  }}</time>
+      {% if comment.url %}
+        <a href="{{ comment.url }}" class="commenter">{{ comment.name }}</a>
+      {% else %}
+        <span class="commenter">{{ comment.name }}</span>
+      {% endif %}
+      <div>
+        {{ comment.comment }}
+      </div>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<form action="http://pooleapp.com/stash/7d93a08c-d347-4d93-93c7-8bbf3e745993/" method="post">
+  <input type="hidden" name="redirect_to" value="{YOUR-THANKS-PAGE}" />
+  <input type="text" name="{YOUR-DATA-FIELD}" />
+  <input type="submit" value="submit" />
+</form>
