@@ -33,8 +33,18 @@ layout: default-post
   {% endfor %}
 </ul>
 
-<form action="http://pooleapp.com/stash/7d93a08c-d347-4d93-93c7-8bbf3e745993/" method="post">
+<!--<form action="http://pooleapp.com/stash/7d93a08c-d347-4d93-93c7-8bbf3e745993/" method="post">
   <input type="hidden" name="redirect_to" value="{YOUR-THANKS-PAGE}" />
   <input type="text" name="{YOUR-DATA-FIELD}" />
   <input type="submit" value="submit" />
+</form>-->
+
+<form action="http://pooleapp.com/stash/7d93a08c-d347-4d93-93c7-8bbf3e745993/" method="post" id="comment-form" class="comment-form">
+  <h2>Leave your comment</h2>
+  <input type="hidden" name="redirect_to" class="redirect" value="{YOUR-THANKS-PAGE}" />
+  <label for="name">Your name</label><input type="text" name="name">
+  <label for="url">Your website <span>(optional)</span></label><input type="text" name="url">
+  <label for="email">Your email <span>(I'll never spam you)</span></label><input type="text" name="email">
+  <label for="comment">Your comment</label><textarea name="comment" class="comment-text"></textarea>
+  <input type="submit" value="Post comment" class="submit" />
 </form>
