@@ -1,0 +1,78 @@
+.comments {
+	margin: $spacing-unit 0;
+
+	li {
+		list-style: none;
+		background-color: #f8f8f8;
+		padding: $spacing-unit $spacing-unit/1.5;
+		margin: $spacing-unit 0;
+		//box-shadow: 0px 1px 4px 0px rgba(#000,.2);
+		border-left: 3px solid $grey-color-light;
+		border-radius: 3px;
+
+		&:first-child {
+			//padding-top: 0;
+		}
+	}
+}
+
+.commenter {
+	font: {
+		size: 16px;
+		weight: 600;
+	}
+	color: $grey-color;
+}
+
+.comment-time {
+	font-size: $small-font-size;
+	color: $grey-color;
+
+	&:before {
+		content: "•";
+		display: inline-block;
+		margin-right: 5px;
+		font-size: 16px;
+		color: lighten($grey-color, 20%);
+
+	}
+}
+
+.comment {
+	padding: $spacing-unit/2  0 0;
+}
+
+.comment-form {
+	margin: $spacing-unit*2 0;
+
+	label {
+		font-size: $small-font-size;
+	}
+
+	input, textarea {
+		display: block;
+		margin: 10px 0;
+		padding: 10px;
+		font-family: $base-font-family;
+		border: 2px solid $grey-color-light;
+		border-radius: 3px;
+
+		
+	}
+	input[type="text"], input[type="email"], textarea {
+		width: 80%;
+
+		@include media-query($on-laptop) {
+			width: 100%;
+		}
+	}
+	input[type="submit"] {
+		padding: 10px 30px;
+		font-weight: 600;
+		color: $text-color-light;
+		background-color: $brand-color-alt;
+		border: 2px solid darken($brand-color-alt, 8%);
+		border-radius: 3px;
+	}
+
+}

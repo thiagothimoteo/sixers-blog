@@ -209,3 +209,32 @@ pre {
         }
     }
 }
+
+.section-title {
+    color: $brand-color;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.line {
+  clear: both;
+  position: relative;
+  border: 0;
+  border-top: 1px solid #eee;
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    display: block;
+    background-color: $brand-color-alt;
+    }
+}

@@ -3,6 +3,10 @@ var yaml = require('json2yaml');
 var http = require('http');
 var fs = require('fs');
 var gravatar = require('gravatar');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var shell = require('gulp-shell');
+var browserSync = require('browser-sync').create();
 
 // Get comments form Poole
 gulp.task("comments", function() {
@@ -43,3 +47,26 @@ gulp.task("comments", function() {
   });
 
 });
+
+gulp.task('compress', function(){
+  return gulp.src('src/js/main.js')
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: ".min"
+    }))
+    .pipe(gulp.dest('src/js'));
+});
+
+ gulp.task('build', shell.task(['jekyll build --watch']));
+
+gulp.task('serve', function(){
+  browserSync.init({
+    server: {
+      baseDir: '_site',
+    }  
+  });
+  gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+  gulp.watch('src/_data/*.*').on('change', browserSync.reload);
+});
+
+gulp.task('default', ['build','serve', 'compress','comments']);
