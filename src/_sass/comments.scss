@@ -1,5 +1,10 @@
-.comments {
+.comments-area {
 	margin: $spacing-unit 0;
+	padding: $spacing-unit*2 0 0;
+	border-top: 1px solid #ddd;
+}
+
+.comments {
 
 	li {
 		list-style: none;
